@@ -1,0 +1,20 @@
+.card-block__input {
+  &--card-code {
+    padding-right: 35px;
+  }
+}
+
+.card-block__button {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  position: absolute;
+  top: 28px;
+  right: 9px;
+  background-color: transparent;
+  border: none;
+  background-image: url("../icon/title.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}

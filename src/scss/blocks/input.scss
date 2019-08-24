@@ -1,27 +1,34 @@
 .input {
+  width: 100%;
   padding: 10px 12px 9px;
   box-sizing: border-box;
   font: inherit;
-  color: inherit;
+  color: #373c43;
   border: 1px solid #e4e9ee;
-}
+  background-color: #ffffff;
 
-.input::placeholder {
-  color: #bec6cf;
-}
+  &:focus,
+  &:hover {
+    border: 1px solid #373c43;
+    outline: none;
+  }
 
-.input:focus,
-.input:hover {
-  border: 1px solid #373c43;
-  outline: none;
-}
+  &::placeholder {
+    color: #bec6cf;
+  }
 
-.input:focus::placeholder {
-  color: transparent;
-}
+  &:focus::placeholder {
+    color: transparent;
+  }
 
-.input:not(:focus):invalid {
-  border: 1px solid #ff0000;
-  outline: none;
-}
+  &:not(:focus):invalid {
+    border: 1px solid #ff0000;
+    outline: none;
+  }
 
+  &--select {
+    padding-right: 35px;
+    color: #373c43;
+    appearance: none;
+  }
+}

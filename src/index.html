@@ -8,9 +8,9 @@
     <link rel="preload" href="fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   </head>
   <body>
-    <main>
+    <main class="app">
       <!--  start aside -->
-      <aside class="aside aside--opened">
+      <aside class="app__aside aside">
         <!--  start aside-nav -->
         <nav class="aside__nav aside-nav">
           <div class="aside-nav__wrap">
@@ -30,42 +30,45 @@
       </aside>
       <!-- end aside -->
       <!-- start payment -->
-      <section class="payment">
+      <section class="app__payment payment">
         <h1 class="visually-hidden">Форма платежа</h1>
         <div class="payment__wrap-top">
           <div class="payment__info">
             <p class="payment__info-text">Информация по оплате:</p>
-            <p><span>Номер счета:</span><span class="payment__account-number">87123658716587</span></p>
-            <p><span>Сумма платежа:</span><span class="payment__sum">100 руб.</span></p>
+            <p class="payment__desc"><span>Номер счета:</span><span class="payment__account-number">87123658716587</span></p>
+            <p class="payment__desc"><span>Сумма платежа:</span><span class="payment__sum">100 руб.</span></p>
           </div>
           <h2 class="payment__title">Данные банковской карты</h2>
           <form class="payment__form" method="post" action="#">
+            <!-- start card -->
             <div class="payment__card card">
-              <div class="card__front">
-                <fieldset class="card__form-field">
+              <div class="card__side card__side--front">
+                <fieldset class="card__form-field card__form-field--card-number">
                     <legend class="card__legend">Номер карты</legend>
-                    <p class="card__block block">
-                        <label class="visually-hidden" for="card_number">первые четыре цифры карты</label>
-                        <input class="input block__input block__input--card-number" type="number" id="card_number">
-                    </p>
-                    <p class="card__block block">
-                        <label class="visually-hidden" for="card_number2">следующие четыре цифры карты</label>
-                        <input class="input block__input block__input--card-number" type="number" id="card_number2">
-                    </p>
-                    <p class="card__block block">
-                        <label class="visually-hidden" for="card_number3">следующие четыре цифры карты</label>
-                        <input class="input block__input block__input--card-number" type="number" id="card_number3">
-                    </p>
-                    <p class="card__block block">
-                        <label class="visually-hidden" for="card_number4">последние четыре цифры карты</label>
-                        <input class="input block__input block__input--card-number" type="number" id="card_number4">
-                    </p>
+                    <div class="card__block-wrap">
+                      <p class="card__block card-block card__block--card-number">
+                          <label class="visually-hidden" for="card_number">первые четыре цифры карты</label>
+                          <input class="input card-block__input" type="number" id="card_number">
+                      </p>
+                      <p class="card__block card-block card__block--card-number">
+                          <label class="visually-hidden" for="card_number2">следующие четыре цифры карты</label>
+                          <input class="input card-block__input" type="number" id="card_number2">
+                      </p>
+                      <p class="card__block card-block card__block--card-number">
+                          <label class="visually-hidden" for="card_number3">следующие четыре цифры карты</label>
+                          <input class="input card-block__input" type="number" id="card_number3">
+                      </p>
+                      <p class="card__block card-block card__block--card-number">
+                          <label class="visually-hidden" for="card_number4">последние четыре цифры карты</label>
+                          <input class="input card-block__input" type="number" id="card_number4">
+                      </p>
+                    </div>
                 </fieldset>
-                <fieldset class="card__validity">
+                <fieldset class="card__form-field card__form-field--validity">
                   <legend class="card__legend">Срок действия</legend>
-                  <p class="card__block block">
+                  <p class="card__block card-block card__block--month">
                     <label class="visually-hidden" for="card_month">месяц</label>
-                    <select class="input block__input block__input--month" id="card_month">
+                    <select class="input input--select card-block__input" id="card_month">
                       <option>01</option>
                       <option>02</option>
                       <option>03</option>
@@ -80,9 +83,9 @@
                       <option>12</option>
                     </select>
                   </p>
-                  <p class="card__block block">
+                  <p class="card__block card-block card__block--year">
                     <label class="visually-hidden" for="card_year">год</label>
-                    <select class="input block__input block__input--year" id="card_year">
+                    <select class="input input--select card-block__input" id="card_year">
                       <option selected>2018</option>
                       <option>2019</option>
                       <option>2020</option>
@@ -94,19 +97,20 @@
                     </select>
                   </p>
                 </fieldset>
-                <p class="card__block block">
-                  <label class="visually-hidden" for="card_holder">держатель карты</label>
-                  <input class="input block__input block__input--card-holder" type="text" id="card_holder" pattern="^[a-zA-Z]+$" placeholder="держатель карты">
+                <p class="card__block card-block card-block--card-holder">
+                  <label class="visually-hidden" for="card_holder">Держатель карты</label>
+                  <input class="input card-block__input" type="text" id="card_holder" pattern="^[a-zA-Z]+$" placeholder="Держатель карты">
                 </p>
               </div>
-              <div class="card__back">
-                <p class="card__block block">
-                  <label class="block__label" for="card_code">Код CVV2 / CVC2</label>
-                  <input class="input block__input block__input--card-code" type="number" id="card_code" min="3" max="3">
-                  <button class="block__button" type="button" aria-label="подсказка"></button>
+              <div class="card__side card__side--back">
+                <p class="card__block card-block card__block--card-code">
+                  <label class="card-block__label" for="card_code">Код CVV2 / CVC2</label>
+                  <input class="input card-block__input--card-code" type="number" id="card_code" min="3" max="3">
+                  <button class="card-block__button" type="button" aria-label="подсказка"></button>
                 </p>
               </div>
             </div>
+            <!-- end card -->
           <button class="button payment__button" type="submit">Оплатить</button>
           </form>
         </div>

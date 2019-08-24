@@ -1,0 +1,124 @@
+.card__side {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 25px 15px 14px;
+  border: 1px solid #e4e9ee;
+  background-color: #f7f8f8;
+  border-radius: 25px;
+
+  &--front {
+  padding: 25px 15px 14px;
+  margin-bottom: 10px;
+  }
+
+  &--back {
+    padding: 87px 15px 88px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  &--back::before {
+    width: 100%;
+    height: 42px;
+    position: absolute;
+    top: 26px;
+    left: 0;
+    background-color: #e4e9ee;
+    content: "";
+  }
+}
+
+.card__form-field {
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  &--card-number {
+    margin-bottom: 17px;
+  }
+
+  &--validity {
+    margin-bottom: 12px;
+  }
+}
+
+.card__legend {
+  display: inline-block;
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+
+.card__block-wrap {
+  display: flex;
+}
+
+.card__block {
+  margin: 0;
+
+  &--card-number {
+    width: 100%;
+    max-width: 65px;
+    margin-right: 9px;
+  }
+
+  &--month,
+  &--year {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &--month::after,
+  &--year::after {
+    width: 16px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-image: url("../icon/arrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    content: "";
+    pointer-events: none;
+  }
+
+  &--month {
+    width: 70px;
+  }
+
+  &--year {
+    width: 86px;
+  }
+
+  &--card-code {
+    width: 138px;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: $tablet-width) {
+  .card {
+    width: 564px;
+    position: relative;
+  }
+
+  .card__side {
+    margin: 0;
+
+    &--front {
+      position: relative;
+      z-index: 2;
+    }
+
+    &--back {
+      max-width: 370px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+  }
+}

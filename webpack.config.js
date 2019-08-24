@@ -35,6 +35,7 @@ const config = {
       test: /\.scss$/,
       exclude: /node_modules/,
       use: ExtractTextPlugin.extract({
+        publicPath: '../',
         use: [
         'css-loader',
         {
@@ -50,12 +51,29 @@ const config = {
         },
         'sass-loader'
         ]})
-    }, {
+    },{
+      test: /icon[\\\/].+\.(gif|png|jpe?g|svg)$/i,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: 'icon/[name].[ext]'
+        }
+      }, {
+        loader: 'image-webpack-loader',
+        options: {
+          mozjpeg: {
+            progressive: true,
+            quality: 70
+          }
+        }
+      },
+      ],
+    },{
       test: /\.(eot|otf|woff|woff2|ttf)$/,
       use: {
           loader: 'file-loader',
           options: {
-              name: '[name].[hash].[ext]',
+              name: 'fonts/[name].[ext]',
           },
       },
     }]
@@ -68,6 +86,10 @@ const config = {
     new CopyWebpackPlugin([{
       from: './src/fonts',
       to: distPath + '/fonts'
+    },
+    {
+      from: './src/icon',
+      to: distPath + '/icon'
     }]),
     ...glob.sync('./src/*.html')
       .map(htmlFile => {
