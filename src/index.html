@@ -42,7 +42,7 @@
           <form class="payment__form" method="post" action="#">
             <div class="payment__card card">
               <div class="card__front">
-                <fielset class="card__form-field">
+                <fieldset class="card__form-field">
                     <legend class="card__legend">Номер карты</legend>
                     <p class="card__block block">
                         <label class="visually-hidden" for="card_number">первые четыре цифры карты</label>
@@ -60,7 +60,7 @@
                         <label class="visually-hidden" for="card_number4">последние четыре цифры карты</label>
                         <input class="input block__input block__input--card-number" type="number" id="card_number4">
                     </p>
-                </fielset>
+                </fieldset>
                 <fieldset class="card__validity">
                   <legend class="card__legend">Срок действия</legend>
                   <p class="card__block block">
@@ -96,13 +96,13 @@
                 </fieldset>
                 <p class="card__block block">
                   <label class="visually-hidden" for="card_holder">держатель карты</label>
-                  <input class="input block__input block__input--card-holder" type="text" id="card_holder" min="4" pattern="^[a-zA-Z]+$" placeholder="держатель карты">
+                  <input class="input block__input block__input--card-holder" type="text" id="card_holder" pattern="^[a-zA-Z]+$" placeholder="держатель карты">
                 </p>
               </div>
               <div class="card__back">
                 <p class="card__block block">
                   <label class="block__label" for="card_code">Код CVV2 / CVC2</label>
-                  <input class="input block__input block__input--card-code" type="number" id="card_code" min="3" max="3" pattern="^[ 0-9]+$">
+                  <input class="input block__input block__input--card-code" type="number" id="card_code" min="3" max="3">
                   <button class="block__button" type="button" aria-label="подсказка"></button>
                 </p>
               </div>
