@@ -1,5 +1,11 @@
-import jQuery from 'jquery';
+import $ from 'jquery';
 
-jQuery(function() {
-    jQuery('body').css('color', 'red');
+global.jQuery = $;
+global.$ = $;
+
+$(document).ready(function() {
+  $('.aside-nav__toggle').on('click', function(evt) {
+    evt.preventDefault();
+    $('.aside').toggleClass('aside--opened');
+  })
 });
