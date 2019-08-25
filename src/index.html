@@ -39,7 +39,7 @@
             <p class="payment__desc"><span>Сумма платежа:</span><span class="payment__sum">100 руб.</span></p>
           </div>
           <h2 class="payment__title">Данные банковской карты</h2>
-          <form class="payment__form" method="post" action="#">
+          <form class="payment__form" method="post" action="#" id="payment_form">
             <!-- start card -->
             <div class="payment__card card">
               <div class="card__side card__side--front">
@@ -48,19 +48,19 @@
                     <div class="card__block-wrap">
                       <p class="card__block card-block card__block--card-number">
                           <label class="visually-hidden" for="card_number">первые четыре цифры карты</label>
-                          <input class="input card-block__input" type="number" id="card_number">
+                          <input class="input card-block__input card-block__input--card-number" type="text" id="card_number" maxlength="4" required>
                       </p>
                       <p class="card__block card-block card__block--card-number">
                           <label class="visually-hidden" for="card_number2">следующие четыре цифры карты</label>
-                          <input class="input card-block__input" type="number" id="card_number2">
+                          <input class="input card-block__input card-block__input--card-number" type="text" id="card_number2" maxlength="4" required>
                       </p>
                       <p class="card__block card-block card__block--card-number">
                           <label class="visually-hidden" for="card_number3">следующие четыре цифры карты</label>
-                          <input class="input card-block__input" type="number" id="card_number3">
+                          <input class="input card-block__input card-block__input--card-number" type="text" id="card_number3" maxlength="4" required>
                       </p>
                       <p class="card__block card-block card__block--card-number">
                           <label class="visually-hidden" for="card_number4">последние четыре цифры карты</label>
-                          <input class="input card-block__input" type="number" id="card_number4">
+                          <input class="input card-block__input card-block__input--card-number" type="text" id="card_number4" maxlength="4" required>
                       </p>
                     </div>
                 </fieldset>
@@ -99,13 +99,13 @@
                 </fieldset>
                 <p class="card__block card-block card-block--card-holder">
                   <label class="visually-hidden" for="card_holder">Держатель карты</label>
-                  <input class="input card-block__input" type="text" id="card_holder" pattern="^[a-zA-Z]+$" placeholder="Держатель карты">
+                  <input class="input card-block__input card-block__input--card-holder" type="text" id="card_holder" pattern="[A-Za-z]{4,}" minlength = "4" placeholder="Держатель карты" required>
                 </p>
               </div>
               <div class="card__side card__side--back">
                 <p class="card__block card-block card__block--card-code">
                   <label class="card-block__label" for="card_code">Код CVV2 / CVC2</label>
-                  <input class="input card-block__input--card-code" type="number" id="card_code" min="3" max="3">
+                  <input class="input card-block__input--card-code" type="text" id="card_code" maxlength="3" required>
                   <button class="card-block__button" type="button" aria-label="подсказка"></button>
                 </p>
               </div>

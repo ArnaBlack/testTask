@@ -21,7 +21,13 @@
     color: transparent;
   }
 
-  &:not(:focus):invalid {
+  &--error:focus,
+  &--error:hover {
+    border: 1px solid #ff0000;
+    outline: none;
+  }
+
+  &--error {
     border: 1px solid #ff0000;
     outline: none;
   }
