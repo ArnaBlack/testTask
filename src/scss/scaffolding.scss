@@ -33,6 +33,7 @@ html {
   }
 
   .visually-hidden:not(:focus):not(:active),
+  input:focus  +  .visually-hidden,
   input[type="checkbox"].visually-hidden,
   input[type="radio"].visually-hidden {
     position: absolute;
@@ -45,6 +46,14 @@ html {
     border: 0;
     clip-path: inset(100%);
   }
+
+  input[type="text"]:required {
+    box-shadow:none;
+  }
+
+  select::-ms-expand {
+    display: none;
+}
 
   @media screen and (min-width: $tablet-width) {
     body {

@@ -1,9 +1,11 @@
 import $ from 'jquery';
+import './jquery.numeric.js';
 
-global.jQuery = $;
-global.$ = $;
+global.jQuery = global.$ = $;
 
 $(document).ready(function() {
+  //очищаемполя после перезагрузки страницы
+  $('input[type="text"]').val('');
   // burger
   $('.aside-nav__toggle').on('click', function(evt) {
     evt.preventDefault();
@@ -23,32 +25,22 @@ $(document).ready(function() {
     var test = pattern.test(val);
     return test;
   };
+  cardNumber.numeric();
+  cardCode.numeric();
 
-  // автофокус и ограничивание число водимых символов в поля номера карты
-  cardNumber.on('keydown', function(e) {
-    var pattern = /^[0-9]+$/;
-    // проверяем паттерн так как в number можно вводить е и знаки +-
-    if(!checkEnteredData (pattern, e)) return false;
-  });
   cardNumber.on('keyup change', function(e) {
     // автофокус
     if ($(this).val().length > 3) {
 			$(this).parent().next().children('.card-block__input--card-number').focus();
     };
-    if ($(this).val().length < 1 && $(this).parent().index() != 0) {
+    if ($(this).val().length < 1) {
 			$(this).parent().prev().children('.card-block__input--card-number').focus();
     };
      if ($(this).val().length > 3 && $(this).parent().index() == 3) {
 			cardHolder.focus();
 		};
   });
-  // проверяем паттерн
-  cardCode.on('keypress change', function(e) {
-    var pattern = /^[0-9]+$/;
-    // проверяем паттерн так как в number можно вводить е и знаки +-
-    if(!checkEnteredData (pattern, e)) return false;
-    // ограничивание число водимых символов в поле
-  });
+
    // только латинские буквы в поле кард-холдер
   cardHolder.on('keypress', function(e)  {
     var pattern = /^[a-zA-Z]+$/;

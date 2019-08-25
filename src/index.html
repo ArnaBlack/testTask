@@ -47,27 +47,26 @@
                     <legend class="card__legend">Номер карты</legend>
                     <div class="card__block-wrap">
                       <p class="card__block card-block card__block--card-number">
-                          <label class="visually-hidden" for="card_number">первые четыре цифры карты</label>
                           <input class="input card-block__input card-block__input--card-number" type="text" id="card_number" maxlength="4" required>
+                          <label class="visually-hidden" for="card_number">первые четыре цифры карты</label>
                       </p>
                       <p class="card__block card-block card__block--card-number">
-                          <label class="visually-hidden" for="card_number2">следующие четыре цифры карты</label>
                           <input class="input card-block__input card-block__input--card-number" type="text" id="card_number2" maxlength="4" required>
+                          <label class="visually-hidden" for="card_number2">следующие четыре цифры карты</label>
                       </p>
                       <p class="card__block card-block card__block--card-number">
-                          <label class="visually-hidden" for="card_number3">следующие четыре цифры карты</label>
                           <input class="input card-block__input card-block__input--card-number" type="text" id="card_number3" maxlength="4" required>
+                          <label class="visually-hidden" for="card_number3">следующие четыре цифры карты</label>
                       </p>
                       <p class="card__block card-block card__block--card-number">
-                          <label class="visually-hidden" for="card_number4">последние четыре цифры карты</label>
                           <input class="input card-block__input card-block__input--card-number" type="text" id="card_number4" maxlength="4" required>
+                          <label class="visually-hidden" for="card_number4">последние четыре цифры карты</label>
                       </p>
                     </div>
                 </fieldset>
                 <fieldset class="card__form-field card__form-field--validity">
                   <legend class="card__legend">Срок действия</legend>
                   <p class="card__block card-block card__block--month">
-                    <label class="visually-hidden" for="card_month">месяц</label>
                     <select class="input input--select card-block__input" id="card_month">
                       <option>01</option>
                       <option>02</option>
@@ -82,9 +81,9 @@
                       <option>11</option>
                       <option>12</option>
                     </select>
+                    <label class="visually-hidden" for="card_month">месяц</label>
                   </p>
                   <p class="card__block card-block card__block--year">
-                    <label class="visually-hidden" for="card_year">год</label>
                     <select class="input input--select card-block__input" id="card_year">
                       <option selected>2018</option>
                       <option>2019</option>
@@ -95,11 +94,12 @@
                       <option>2024</option>
                       <option>2025</option>
                     </select>
+                    <label class="visually-hidden" for="card_year">год</label>
                   </p>
                 </fieldset>
                 <p class="card__block card-block card-block--card-holder">
-                  <label class="visually-hidden" for="card_holder">Держатель карты</label>
                   <input class="input card-block__input card-block__input--card-holder" type="text" id="card_holder" pattern="[A-Za-z]{4,}" minlength = "4" placeholder="Держатель карты" required>
+                  <label class="visually-hidden" for="card_holder">Держатель карты</label>
                 </p>
               </div>
               <div class="card__side card__side--back">
